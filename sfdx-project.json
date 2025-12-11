@@ -1,12 +1,16 @@
 {
   "packageDirectories": [
     {
-      "path": "force-app",
+      "path": "force-app\\main\\default\\classes",
       "default": true
+    },
+    {
+      "path": "force-app\\main\\default\\objects",
+      "default": false
     }
   ],
   "name": "salesforce-feature-flags",
   "namespace": "",
   "sfdcLoginUrl": "https://login.salesforce.com",
-  "sourceApiVersion": "57.0"
+  "sourceApiVersion": "65.0"
 }

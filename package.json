@@ -1,7 +1,7 @@
 {
   "name": "salesforce-app",
   "private": true,
-  "version": "1.0.0",
+  "version": "0.0.0",
   "description": "Salesforce App",
   "scripts": {
     "lint": "eslint **/{aura,lwc}/**",
@@ -13,7 +13,11 @@
     "prettier": "prettier --write \"**/*.{cls,cmp,component,css,html,js,json,md,page,trigger,xml,yaml,yml}\"",
     "prettier:verify": "prettier --list-different \"**/*.{cls,cmp,component,css,html,js,json,md,page,trigger,xml,yaml,yml}\"",
     "postinstall": "husky install",
-    "precommit": "lint-staged"
+    "precommit": "lint-staged",
+    "lib:updateFromUpstream": "git fetch upstream && git merge upstream/main --allow-unrelated-histories",
+    "lib:bump-version": "npm version --no-git-tag-version major",
+    "lib:deploy": "sf project deploy start --metadata CustomObject ApexClass",
+    "lib:release": "npm run lib:bump-version && npm run lib:updateFromUpstream && npm run lib:deploy"
   },
   "devDependencies": {
     "@lwc/eslint-plugin-lwc": "^1.1.2",
