@@ -17,7 +17,7 @@
     "lib:updateFromUpstream": "git fetch upstream && git merge upstream/main --allow-unrelated-histories",
     "lib:bump-version": "npm version --no-git-tag-version major",
     "lib:deploy": "sf project deploy start --metadata CustomObject ApexClass",
-    "lib:release": "npm run lib:bump-version && npm run lib:updateFromUpstream && npm run lib:deploy"
+    "lib:release": "npm run lib:updateFromUpstream && npm run lib:bump-version && npm run lib:deploy"
   },
   "devDependencies": {
     "@lwc/eslint-plugin-lwc": "^1.1.2",
